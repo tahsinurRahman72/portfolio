@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 162 74% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 20% 94%;
+    --secondary-foreground: 165 40% 14%;
+    --muted: 160 20% 95%;
+    --muted-foreground: 165 12% 40%;
+    --accent: 162 45% 92%;
+    --accent-foreground: 162 74% 20%;
+    --border: 160 20% 88%;
+    --input: 160 20% 88%;
+    --ring: 162 74% 24%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 165 45% 4%;
+    --foreground: 150 25% 96%;
+    --card: 165 38% 7%;
+    --card-foreground: 150 25% 96%;
+    --primary: 162 62% 42%;
+    --primary-foreground: 165 45% 4%;
+    --secondary: 165 25% 14%;
+    --secondary-foreground: 150 25% 96%;
+    --muted: 165 25% 12%;
+    --muted-foreground: 155 15% 62%;
+    --accent: 162 45% 16%;
+    --accent-foreground: 162 62% 70%;
+    --border: 165 25% 15%;
+    --input: 165 25% 15%;
+    --ring: 162 62% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  /* Theme fade. The background base is now a solid colour too, so everything
+     fades together at this one duration — change 500ms to taste. */
+  * {
+    transition: background-color 300ms ease, border-color 300ms ease,
+      color 300ms ease, fill 300ms ease;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      hsl(158 65% 58%) 0%,
+      hsl(162 70% 45%) 100%
+    );
+    @apply bg-clip-text text-transparent;
+  }
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        hsl(var(--border) / 0.4) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+  .glass {
+    @apply border border-border/60 bg-card/60 backdrop-blur-xl;
+  }
+}
