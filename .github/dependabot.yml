@@ -13,6 +13,13 @@ updates:
     commit-message:
       prefix: "deps"
       prefix-development: "deps-dev"
+    # Major bumps are breaking by definition (tailwind 3 -> 4 rewrites the
+    # config format; lucide 1.x dropped brand icons). Review and run those
+    # deliberately rather than having them opened automatically.
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       # Batch routine bumps into one PR each to keep the noise down.
       # Security fixes are raised separately and immediately regardless.
