@@ -8,19 +8,19 @@ import { profile } from "@/data/resume";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: `${profile.name} - ${profile.role}`,
+  title: "Tahsinur",
   description: profile.tagline,
   authors: [{ name: profile.name }],
   keywords: [
     "Tahsinur Rahman",
-    "Data Scientist",
-    "AI Data Trainer",
-    "Machine Learning",
-    "Data Science",
+    "Detection Engineer",
+    "Data Engineer",
+    "Cybersecurity",
+    "MITRE ATT&CK",
     "Portfolio",
   ],
   openGraph: {
-    title: `${profile.name} - ${profile.role}`,
+    title: "Tahsinur",
     description: profile.tagline,
     type: "website",
   },
