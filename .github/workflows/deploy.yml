@@ -3,6 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # Docs and editor config don't affect the built site, so skip the run.
+    # Site content lives in data/resume.ts, not in markdown.
+    paths-ignore:
+      - "**/*.md"
+      - LICENSE
+      - .gitignore
+      - .vscode/**
+      - .claude/**
   workflow_dispatch:
 
 permissions:
