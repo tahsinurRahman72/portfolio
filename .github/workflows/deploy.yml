@@ -10,9 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Allow one deployment at a time. Queued runs are skipped in favour of the
+# latest, but an in-progress deployment is never cancelled midway.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
